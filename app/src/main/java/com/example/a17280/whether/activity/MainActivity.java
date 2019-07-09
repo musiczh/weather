@@ -141,7 +141,9 @@ public class MainActivity extends AppCompatActivity {
 
         //判断是否已经选择了城市，否则打开另一个活动选择城市
         if (preferences.getString("city_name",null) == null) {
-            refreshNew();
+            //refreshNew();
+            Intent intent1 = new Intent(MainActivity.this,MyCityActivity.class);
+            startActivity(intent1);
         }else{
             refreshWhether();
         }

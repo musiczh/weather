@@ -51,8 +51,8 @@ public class EnterActivity extends AppCompatActivity {
         }
 
 
-        //给返回按钮设置监听
-        Button button = (Button) findViewById(R.id.button_enter);
+        //给进入按钮设置监听
+        Button button = findViewById(R.id.button_enter);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +65,8 @@ public class EnterActivity extends AppCompatActivity {
 
 
 
-    }
+    }//-------------onCreate----------
+
 
     //广播接收类，退出活动
     class OverBroadcastReceiver extends BroadcastReceiver {
@@ -156,7 +157,7 @@ public class EnterActivity extends AppCompatActivity {
         if(location.equals("no")) {
             Toast.makeText(EnterActivity.this,"定位失败",Toast.LENGTH_SHORT).show();
         }else{
-            String data = String.valueOf(location);
+            String data = location;
             String address = "https://api.seniverse.com/v3/location/search.json?key=SMhxMxzEERc3eGJ4s&limit=100&q=" + data;
             sendHttpURL(address, new HttpCallBackListener() {
                 @Override
